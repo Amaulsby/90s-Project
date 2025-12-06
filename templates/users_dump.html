@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>All User Accounts (Demo Dump)</h2>
+
+<p class="warning">
+    This page shows all usernames and plain-text passwords, simulating what an attacker
+    could see after exploiting a vulnerable site.
+    Do <strong>not</strong> use real passwords.
+</p>
+
+<table class="users-table" border="1" cellspacing="0" cellpadding="5">
+    <tr class="header-row">
+        <th>Username</th>
+        <th>Password (plain text)</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.username }}</td>
+        <td>{{ user.password }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

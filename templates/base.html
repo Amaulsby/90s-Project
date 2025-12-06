@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>90s Hacker Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div id="page-wrapper">
+    <header>
+        <h1>╔═╗  90s Hacker Forum  ╔═╗</h1>
+        <p class="subtitle">Dial-up vibes • ANSI aesthetics • Plain-text passwords 😱</p>
+
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a> |
+            <a href="{{ url_for('login') }}">Login</a> |
+            <a href="{{ url_for('register') }}">Create Account</a> |
+            <a href="{{ url_for('users_dump') }}">(Demo) Users Dump</a>
+            {% if username %}
+                <span class="right">Logged in as {{ username }} |
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </span>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>Best viewed in Netscape Navigator 3.0 at 800x600 resolution.</p>
+        <p><span class="blink">Under Construction</span> 🚧</p>
+    </footer>
+</div>
+
+</body>
+</html>
