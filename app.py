@@ -62,14 +62,18 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
+        # Get user input from the form
         username = request.form.get("username", "").strip()
         password = request.form.get("password", "").strip()
-
         db = get_db()
-        row = db.execute(
-            "SELECT id, username FROM users WHERE username = ? AND password = ?",
-            (username, password),
-        ).fetchone()
+
+        # ⚠️ UNSAFE VERSION — SQL Injection Vulnerable (Proof of Concept)
+        query = (
+            'SELECT id, username FROM users WHERE username = "' + username +
+            '" AND password = "' + password + '"'
+        )
+
+        row = db.execute(query).fetchone()
 
         if row:
             session["user_id"] = row["id"]
@@ -99,3 +103,4 @@ def users_dump():
 
 if __name__ == "__main__":
     app.run(debug=True)
+

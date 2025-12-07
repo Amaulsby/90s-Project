@@ -6,7 +6,7 @@ CREATE TABLE users (
     password TEXT NOT NULL
 );
 
--- Dummy 90s-hacker-style users with plain-text passwords (demo only)
+
 INSERT INTO users (username, password) VALUES
   ('admin',      'admin123'),
   ('acidburn',   'hacktheplanet'),

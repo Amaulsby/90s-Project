@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>90s Hacker Forum</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div id="page-wrapper">
+    <header>
+        <h1>╔═╗  90s Hacker Forum  ╔═╗</h1>
+        <h2> While the content in this version of the site is the same, it is just an archived and non-interactive version. I highly recommend following the quick steps below to access the full version of the site.</h2>
+        <ol> 
+        <li> Clone the full github repository to your machine either via git clone or Download ZIP -> Extract </li>
+        <li> In a terminal (such as powershell or bash), cd ~/Downloads/90s-project </li>
+        <li> Ensure Python3 is installed, in a terminal enter: </li>
+        <ul> <li> For Mac/Linux: python3 -m venv venv </li> <li> source venv/bin/active </li>
+        <li> For Windows (Powershell): python -m venv venv </li> <li> venv\Scripts\Activate </li> </ul>
+        <li> You should see something like: "(venv) user@pc:~/90s-project$" </li>
+        <li> Next, in a terminal enter: pip install Flask <i>or</i> pip install -r requirements.txt</li>
+        <li> Finally, enter: python init_db.py, you should see something like: Database initialized at /full/path/to/90s-project/forum.db </li>
+        <li> Now you can enter: python app.py, and the site will be running at http://127.0.0.1:5000 </li>
+        <li> If you get an error saying "ModuleNotFoundError...", ensure Flask is installed with pip </li>
+        
+
+
+        <nav>
+            <a href="http://127.0.0.1:5000/">Home</a> |
+            <a href="http://127.0.0.1:5000/login">Login</a> |
+            <a href="http://127.0.0.1:5000/register">Create Account</a> |
+            <a href="http://127.0.0.1:5000/users-dump">(Demo) Users Dump</a>
+            
+                <span class="right">Logged in as admin |
+                    <a href="http://127.0.0.1:5000/logout">Logout</a>
+                </span>
+            
+        </nav>
+    </header>
+
+    <main>
+        
+<h2>Message Board</h2>
+
+<div class="posts">
+
+    <article class="post">
+        <h3>The Evolution of Hacker Culture</h3>
+        <p>
+        Hacking culture is a phenomenon that has been around much longer
+ than the internet. Revolving around curiosity, problem solving, and 
+counterculture, hacking has a deep, rich history and evolution. The 
+article "A Brief History of Hacking" by Jacob Fox sums up the dawn of 
+both this term and culture nicely. While some may point to 1878 as first
+ case of "hacking", when young phone operators pranked callers by 
+switching telephone lines, the term originates from around the 
+1950's-60's when students at MIT started altering train sets, and were 
+deemed "hackers". But what most people consider true hacking started 
+with John Draper in 1965, a man more famously known as Cap'n Crunch. 
+Draper realized that by using a toy whistle from a cereal box, due to 
+the frequency it produced, he could trick the telephone system and make 
+free long-distance calls. Bypassing technology with cleverness, this is 
+the foundation of hacking. 
+        </p>
+        <p>
+        "Phreaking" as a term comes from the words phone, free, and 
+freak, according to the history of the word from Britannica. The first 
+ever "phreak" was a blind man named Joe Engressia who could whistle a 
+perfect 2600 MHz pitch, recreating the exact frequency of a telephone 
+routing signal. Engressia's friend, John Draper, found that a whistle 
+from a Captain Crunch box produced this very same frequency. This 
+technique spread fast, and eventually "phone phreaks" switched from toy 
+whistles to blue boxes, homemade transmitters generating the same 12 
+tones used by phone operators. But phreaking was about more than just 
+making free calls, it was about curiosity and the ability to circumvent 
+complex systems. Phreaks weren't just phreaking because they couldn't 
+afford calls, it was a statement about being clever enough to ask "how 
+does this work, and how can I get around it?". While the eventual 
+upgrade of telephone lines in 1983 would effectively end phreaking, the 
+attention it garnered and subsequent movement it started would never be 
+stopped. Once computers and modems became more accessible, this same 
+mindset moved from phone lines to online system.
+        </p>
+        <p>
+	By the 80s and early 90s, underground forums that predated the web 
+began to arise. These bulletin board systems (BBS) were networks of 
+local computers that could connect via modem and share messages, 
+download files, or even play games. Preserved today on textfiles.com, 
+Douglas Thomas argues in his book <i>Hacker Culture</i> that these 
+boards, available only via dial-up, were the birth of digital identity. 
+Each BBS had its own culture, rules, and hierarchies, with contributors 
+known just by their username and reputation. These boards are perfect 
+snapshots of how hackers learned, traded techniques, and built 
+reputation.
+	</p>
+	 Another hack regarding phone systems, an entry listed as "Aspen.txt" 
+and titled "A Complete Guide To Hacking and Use of ASpEN Voice Mail 
+Systems" was written by "Caveman" and published on January 13th, 1992 by
+ "R.A.W Productions". Caveman explains that ASpEN or Automated Speech 
+Exchange Networks are voicemail systems used by small businesses for 
+individual employees away from their desk. It goes on to explain, with 
+much profanity, how to find, hack, and avoid getting removed from an 
+AsPEN box. Finally, writing how to contact him, shouting out some of his
+ acquaintances, and listing the boards he is a part of, Caveman ends the
+ entry with: <p></p>
+	
+<p>[Disclamer] <br>
+I could say that I don't want anyone to do anything contained in this file,<br>
+and that it is strictly for informational purposes, but I know that people <br>
+are going to go out and do this shit. So, Mr. Law Enforcement Agent, cram it,<br>
+you can't find me, for all you know, I could be your father (and knowing your<br>
+mother, I probably am.) AMF.<br>
+</p>
+
+<p>[Bullshit]<br>
+
+If you have suggestions, comments, or have nothing better to do, you can <br>
+reach me (Caveman) at [Legion 1]: 202.337.2844 [12/24/96/14.4]<br>
+</p>
+
+<p>[PEACE]<br>
+
+Peace to Mr. Black, my partner in crime.<br>
+Peace to Tomellicas, Legion creator.<br>
+Peace to G-Spot, for finding the systems to hack on.<br>
+Peace to Night Ranger, for his article.<br>
+
+</p><p>[The Boards]<br>
+
+Legion 1 [202]<br>
+Powerdome, INC. [703]<br>
+Midian Private [703]<br>
+School For Scandal [301]<br>
+
+</p><p>
+This type of post perfectly sums up hacker culture in the 90s. Building a
+ name for himself, working with other hackers, sharing his methods, and 
+sticking it to both law enforcement and businessmen, Caveman's entry is 
+the quintessential "hacker" post. But hacking, especially by the 80s and
+ 90s, was about much more than just tricking phone systems. When the Web
+ arrived, it did so with little to no security measures, trusting users 
+blindly. Well seasoned hackers, like Caveman, were likely quite excited 
+that this was the case. To hackers, the Web was a new playground, one 
+with thousands of vulnerable sites hosted from university servers, 
+basement Linux machines, and business offices, and all accessible from 
+the comfort of your own home. 
+</p>
+    </article>
+
+    <hr>
+
+    <article class="post">
+        <h3>WHAT MADE THE EARLY WEB INSECURE?</h3>
+        <p>
+Originally, websites were designed with completely static HTML, which 
+meant there was no interactivity. Because of this, Common Gateway 
+Interface (CGI) scripts were written in Perl, C, or Shell scripts to 
+enable interaction with the server. However, CGI was a disaster for 
+security, unsanitized input strings were sent directly to scripts and 
+developers went with the blanket assumption that users would only give 
+normal input. This meant that anyone with some programming knowledge 
+could end up with full access to a server via a "poisoned" input.
+</p>
+<p>
+At the time, most "System Administrators" were just young college 
+graduates who had a knack for computers, not security experts (which 
+didn't exist as a job yet). This meant that most admins just used sample
+ configurations for their sites, and implemented CGI with a myriad of 
+vulnerabilities. One of the first famous hacks exploiting CGI was the 
+PHF exploit. By the mid 90's, thousands of servers came preinstalled 
+with PHF, a CGI phone book lookup script. PHF took user input and passed
+ it directly into shell command on the server. As explained in a writeup
+ archived on insecure.org, access, sometimes even root access, to any 
+server running PHF could be attained by opening a telnet port (a 
+connection protocol) on your machine and simply pasting (with minor 
+adjustments according to your scenario) this into the site:<br>
+<br>
+GET <br>
+/cgi-bin/phf?Jserver=foobar.com%0Acat%20/etc/
+passwd%0A&amp;Qalias=&amp;Qname=foo&amp;Qemail=&amp;Qnickname=&amp;Qoffice_phone=&amp;Qcallsign=&amp;Qproxy=&amp;Qhigh_school=&amp;Qslip=
+ HTTP/1.0<br>
+Accept: */*<br>
+Accept: application/x-wais-source<br>
+Accept: text/plain<br>
+Accept: text/html<br>
+Accept: www/mime<br>
+User-Agent:  Lynx/2.3 BETA  libwww/2.14<br>
+Referer:  http://localhost/cgi-bin/phf<br>
+</p>
+        <p>
+These types of exploits led to thousands of compromised servers, and was
+ the first example of widespread remote injection of arbitrary code over
+ HTTP. While CGI didn't appear until the 90's, earlier hacks exploiting 
+machines like this led to the passing of one of the most important laws 
+in hacking history, the Computer Fraud and Abuse Act (CFAA) of 1986. 
+This law criminalized unauthorized access to computer systems, something
+ that wasn't really explicitly defined, and broadly made it easy to 
+prosecute hackers regardless of how much harm was actually done. 
+Regardless of this, hackers understood at the time that the exploits 
+possible showed the naivety of developers. The Web trusted users by 
+default, a sentiment that would be true much longer than CGI was used, 
+and would continue to lead to more exploitation. Once this was clear, 
+hackers realized that most systems could be breached one way or another,
+ it was just a puzzle waiting to be solved. And conveniently, hackers 
+love puzzles.
+        </p>
+    </article>
+
+    <hr>
+
+    <article class="post">
+        <h3>THE DEVELOPMENT OF MODERN DATABASES AND THEIR EXPLOITATION</h3>
+        <p>
+        By the mid to late 90's, many dynamic sites began using early 
+SQL servers. SQL, or Structured Query Language, is a tool used to 
+define, manage, and query data stored in a database. Moreover, SQL 
+allows users to interact with structured data, such as by creating a 
+username and password that is then stored on the server. SQL is still 
+widely used today, and is the standard language for relational 
+databases. However, modern SQL is taught with much better security 
+practices, unlike the sites of the 90s. When SQL first began being 
+implemented, devlopers assumed users didnt have access to the database 
+via the website, so it was safe to assume that only a user would know, 
+and attempt to input, their own password...right?
+        </p>
+        <p>
+        Well, in reality early SQL was written very poorly. This isn't 
+necessarily the fault of the programmers, as this was simply the 
+accepted way to write code at the time, but it created many exploitable 
+issues. For instance, early SQL developers concatenated strings with 
+user input by writing a script like: <br>
+        <br>
+        SELECT * FROM users WHERE username = '$user' AND password = '$pass' <br>
+        <br>
+This script essentially says: Get some information from the database 
+(SELECT), get everything from the matching row (*), look inside the 
+table called users (FROM users), but only give me the rows that meet the
+ following conditions (WHERE). Next it says, find the rows where the 
+username column matches the user input (username = '$user, if the user 
+typed admin then username = 'admin'), then both conditions must be true 
+(AND), find rows where the password column matches the user input 
+(password = $pass). This essentially means if a row matches with the 
+username and password, access for that user is granted.
+        </p>
+        <p> This code works, and seems to be pretty intuitive, logging 
+in a user when and only when they input the correct password. However, 
+the big problem here is that the database cannot tell where the input 
+from the user ends and SQL code begins. This introduces the concept of 
+SQL injection. In SQL, '1' = '1' is an example of an always true 
+statement. If a hacker were to input the admin username but the password
+ as: <br>
+        <br>
+        ' ' OR '1' = '1' <br>
+        <br>
+        The SQL query would now become: <br>
+        <br>
+        SELECT * FROM users WHERE username = 'admin' AND password = ' ' OR '1' = '1' <br>
+        <br>
+        This would evaluate to: <br>
+        <br>
+        1: password = ' ' (false) <br>
+        2: '1' = '1' (true) <br>
+        <br>
+    	Making the entire statement true and logging the hacker in as the admin. <br>
+    	<br>
+    	
+    	In layman's terms, the hacker is telling the database "log me in as
+ admin if the password is blank or if 1 = 1." and since 1 always equals 
+1, access is granted. This exact attack is possible on this very 
+website, and if " or ""=" is pasted into the login page, the user will 
+be able to access the admin account (first account in the database) 
+without a password. Another attack that is also possible on this website
+ is one that destroys the database instead of dropping it. For hackers 
+that want to wreak havoc instead of infiltrate an account, one could 
+enter either into the username or password field: <br>
+    	<br>
+    	'; DROP TABLE users;-- <br>
+    	<br>
+    	This code turns anything following it into a comment with "--", 
+meaning anything follow "DROP TABLE users" will not be executed. It then
+ deletes the entire table of users with "DROP TABLE users" and ignores 
+everything after.
+        </p>
+        <p>
+        Similarly, an attacker could write SQL injections that display 
+the entire table of usernames and passwords. Since most early websites 
+didn't hash passwords, or hashed them using poor algorithms, this could 
+expose sensitive information. Furthermore, if a site stored information 
+such as name, phone number, address, username, password, and possibly 
+even financial information, this could all be accessed with a simple SQL
+ injection attack. 
+        </p>
+        <p>
+        Hence, the fundamental flaw of early SQL was, again, that it 
+trusts the user to only have normal input, and trusts whatever they type
+ to be fed directly to the database. Modern SQL treats user input as 
+data, rather than a part of the command. This is done using 
+parameterized queries, where instead of concatenating strings together, 
+the program will send the user code separately from the SQL command. 
+This is done so that the user input cannot escape into the actual 
+database, with inescapable placeholders representing user input. Below 
+is an example of the modern, safe version of the same SQL query: <br>
+        <br>	
+        SELECT * FROM users WHERE username = ? AND password = ? <br>
+        cursor.execute(query, (username, password)) -&gt; Python implementation used in this site (but with unsafe SQL) <br>
+ </p><p> 
+ This flavor of hack completely changed the game. With one simple input,
+ attackers could gain complete access to servers and do with it what 
+they please. This, along with other hacks of the time, changed the 
+culture around hacking and specifically the reputation of hackers. 
+Instead of posting techniques to build a reputation, a hacker could just
+ plaster their handle all over a popular website, telling everyone they 
+took total control. 
+        
+    </p></article>
+
+    <hr>
+
+    <article class="post">
+        <h3>THE CRACKDOWN ON HACKERS, AND SPLIT OF THE INDUSTRY</h3>
+        <p>
+Numerous hacks ranging from "put my name on the website" to "steal 
+everyone's credit card" attacks put hackers into the spotlight. 
+Hollywood portrayed them as mischevious villains, and the average 
+internet user came to fear them. In 1998 the Digital Millenium Copyright
+ Act (DMCA) was passed which made it illegal to "circumvent 
+technological protection measures", aimed at cracking down on piracy and
+ DVD cracking. However, this changed the way hackers could share 
+vulnerabilities, because publishing a way to bypass a digital lock (even
+ for legitimate study) could be considered criminal. Following 9/11, the
+ Patriot Act of 2001 took this further and broadened the definition of a
+ "protected machine" while making penalties for intrusions greater. With
+ cybercrime now considered a matter of national security, and government
+ agencies gaining new surveillance powers, hacking quickly became 
+associated with terrorism, espionage, and criminal mischief. 
+        </p>
+        <p>
+        These developments caused a schism in hacker culture. Many 
+hackers went towards the professional side, becoming "white hat hackers"
+ or security professionals researching vulnerabilities or "penetration 
+testing" companies sites. "Gray hat hackers" took the middleground, 
+finding vulnerabilities but selling them to companies in order to be 
+fixed via programs known as "bug bounty programs", a practice that would
+ have been a felony a decade prior. Those who chose to become "black hat
+ hackers" continued exploiting, selling vulnerabilities to the highest 
+bidder, and using hacking either to make money illegally or push a 
+political agenda. 
+        </p><p>
+While young, curious, and clever 80s-90s hackers grew into security 
+consultants, bug hunters, or even serious criminals, the world and 
+culture of hacking changed drastically. However, many things remain 
+similar to this day. The late 90s and early 2000s saw the rise of 
+hacking get-togethers in the form of local educational meetups, and 
+eventually B-side conferences, volunteer-run conventions focused on 
+cutting edge cybersecurity topics. Many of these conferences are still 
+around today, most notably DEFCON, and consist of tool showcases, 
+hacking competitions (often Capture The Flag, or CTF, themed games), and
+ technical talks. These conferences cater to all hackers, but 
+predominately are places where white and grey hat hackers can talk shop,
+ make connections, and show off their skills. Conferences like this 
+shaped modern hacker culture, instead of clandestine message boards 
+hackers could meet up to share ideas and conduct real-world exercises 
+together. This led to a much more open, accessible network of 
+cybersecurity, still focused on solving puzzles, but doing so in a 
+challenge-oriented, isolated, and competitive manner rather than hacking
+ unsuspecting machines. This isn't to say that hackers who might be 
+considered black hats don't attend these conferences or share their 
+knowledge, but rather that the mainstream hacker culture today is more 
+centered around a transparent, educational environment ultimately geared
+ at <i>improving</i> security.
+        </p>
+        <p>
+        This era also saw the rise of the "Dark Web", a series of 
+"hidden services" only accessible using a secure, fairly anonymous 
+routing protocol known as The Onion Router (TOR). Completely 
+decentralized and "free-reign", the dark web is filled with plaintext 
+sites valuing security over anything else. It is also full of hackers, 
+criminals, and government honey pots, with sites catering to drug users,
+ cybercriminals, and even pedophiles. However, the dark web is not an 
+entirely negative place, though often only associated with crime, and 
+provides many wholesome services such as allowing access to censored 
+news/information for people under totalitarian regimes. In the world of 
+hacking, the dark web is a place where you can buy, sell, and view new 
+exploits, data leaks, or compromising information. Very reminiscent of 
+old BBSes and the early internet, the dark web contains message boards, 
+chat rooms, and marketplaces for all sorts of illicit services and 
+products. While black hats might be using the dark web to sell their 
+work or buy a leak, white and grey hat hackers often have to use it as 
+well whether to verify validity of data breaches or run interference on a
+ hacked company's behalf. Governments around the world use TOR as well, 
+with the CIA having used it to communicate with spies, and agencies like
+ the FBI or NSA using it to create honey pots sites to collect 
+information on cybercriminals. 
+        </p>
+        </article>
+         <hr>
+
+    <article class="post">
+    <h3> MODERN BLACKHATS AND ORGANIZED CYBERCRIME </h3>
+        <p>
+ While white and grey hat hackers became common, necessary, and 
+respectable occupations, the world of black hat hacking continued to 
+evolve as well. In fact, black hat hacking today might be closer to what
+ Hollywood in the 90s and early 2000s portrayed it as than what hackers 
+back then were actually doing. Except, rather than the lone "mischevious
+ hacker in the basement", cybercrime today is dominated by organized, 
+elite ransomware cartels, often suspected to be backed by nation states 
+or greater organized crime. ransomware attacks consist of breaking into a
+ system and systematically locking out all of its users, typically by 
+encrypting huge amounts of data. The attackers will then demand a large 
+sum of money in a certain amount of time, in difficult to trace 
+cryptocurrency, and force the victim to hope that once they pay it their
+ files will be released. If the victim doens't pay, or waits too long, 
+the data is completely destroyed. Typically, with some exceptions, the 
+hackers live up to their word. This makes it clear to possible future 
+victims that "this isn't a joke or scam, we will destroy your data" 
+while also creating an incentive to pay by historically sticking to 
+their word. 
+        </p>
+        <p> 
+        This type of hack is extremely lucrative, and it is no 
+coincidence that these attacks are carried out by well-funded, 
+structured teams, with budgets and strategic goals. These teams often 
+target systems that are crucial to safety or commerce, such as 
+hospitals, business POS systems, and in one instance even a cargo 
+facility. While many of the exploits they use still trace back to the 
+fundamental concepts hackers of the 90s discovered, such as putting too 
+much trust in the user, comparing early hackers to modern ransomware 
+groups is like comparing an armed bank robber to an elite team of 
+well-trained thieves. A 2020 New York Times article titled "Ransomware 
+Attacks Grow, Crippling Cities and Businesses" by Nathaniel Popper 
+states that <br>
+        <br>"The average payment to release files spiked to $84,116 in 
+the last quarter of 2019, more than double what it was the previous 
+quarter...In the last month of 2019, that jumped to $190,946, with 
+several organizations facing ransom demands in the millions of dollars."<br>
+        With these types of payouts, there is no question why ransomware
+ attacks continue to become more frequent. While the big teams go for 
+the big fish, such as crucial, high-volume computer systems, they also 
+make money from selling their ransomware software to other hackers. 
+Requiring little to no technical experience, a purchase made on the dark
+ web with cryptocurrency could instantly provide you with an all-in-one 
+ransomware system ready to be deployed at your workplace, school, or 
+local hospital, with software often written to send some of the ransom 
+money to the purchaser, and some as a kickback to the developer(s). 
+        </p>
+        <p>
+        But ransomware attacks don't just target business and 
+infrastructure. Many smaller-time hackers focus on personally encrypting
+ an individuals machine, demanding a smaller payout to save their work 
+files, family photos, or even explicit content that the hacker might 
+threaten to release if unpaid. The New York Times also states that 
+security experts say our current numbers on ransomware attacks are 
+underestimated, considering most individuals just pay the few hunred 
+dollars to get their files back quietly, never reporting the incident to
+ authorities. 
+        </p>
+        <p>
+ While ransomware is the most lucrative and fastest-growing type of 
+attack today, black hat hackers still make money other ways. Selling 
+lists of passwords, banking information, or even specifically curated 
+exploits are all common ways a black hat hacker might make money. While 
+black hats are often grouped in with ransomware organizations and 
+well-trained teams of cybercriminals, in reality most of them are just 
+curious, clever computer nerds who are willing to break the law to make a
+ few bucks doing something they love. While it's unlikely you might see a
+ member of a state-sponsored ramsomware organization at a hacker 
+conference, there's a good chance you'll run into some mischevious 
+small-time hacker who's username is jotted down on an FBI list 
+somewhere. 
+      </p>
+</article>
+<hr>
+ <article class="post">
+ <h3>MY PERSONAL HACKING STORIES &amp; FINAL REMARKS</h3>
+ <p>
+ While hacking has a fascinating history and culture surrounding it, 
+there is nothing quite like experiencing it firsthand. I myself was 
+lucky enough to start a Tik-Tok in 2020 revolving around cybersecurity. 
+16-year old me had gotten into CTF-style hacking, social engineering 
+labs, and the occasional poke around local WiFI networks (with consent 
+of course). Some of the stuff I was doing was just super cool to me, so I
+ figured I'd share it with others who might have similar interests. What
+ I did not expect was to gain over 500,000 followers in less than 6 
+months, and become the face (though I never did show my face), of a 
+short-lived hacker community during the Covid-19 pandemic. At its 
+height, my Discord server was a 5000 person army consisting of 
+real-world white hat professionals, teenagers and script kiddies begging
+ to learn how to become movie-style hackers, Instagram models asking 
+people to log them back into their accounts, and of course a bunch of 
+mischevious computer nerds, like myself at the time, constantly 
+one-upping each other and pushing the limits of what my volunteer 
+moderation team would allow. 
+ </p>
+ <p>
+ I am proud to say I taught many people how to improve their account and
+ data security, OPSEC (Operational Security), and become real life 
+hackers with the educational resources available online today. I am a 
+little less proud to say that while interesting, the experience was 
+quite daunting at times. My server (but not myself) was mentioned 
+briefly in an official FBI document one of my buddies requested via 
+FOIA, but was linked to a user who didn't contribute much but was 
+apparently a well connected black hat. My daily routine at the time also
+ consisted of checking to see if i was doxxed on doxbin, a site where 
+anonymous users post the personal information of people online, creating
+ sock puppet accounts of fake people who shared information with me, and
+ defending myself to hundreds of hackers claiming I was a fraud and they
+ were more skilled. While quiet today, I met some of my best online 
+friends during that time, some of who run their own cybersecurity 
+companies today.  
+ </p>
+ <p>
+ The best part about this experience wasn't the idea of having a 
+5000-idiot strong hacker army ready to deploy at my beckon call, though 
+that was pretty awesome, but was experiencing the true world of hacking 
+right from the center of it. Staying up until 4 in the morning while a 
+guy from the Czech Republic is showing 40 people how to scrape IP 
+addresses of improperly setup Malaysian security cameras is truly a 
+novel thing. While hacking has changed drastically since the 90s, this 
+collaborative culture has always remained the cornerstone. New 
+vulnerabilities will be found, companies and legislators will respond to
+ attacks, and hackers will adapt accordingly, but hacking as a culture 
+will always be about curiosity, problem solving, and just the right 
+amount of mischief.
+ </p>
+  </article>
+ <article class="post">
+ <h3> DESCRIPTIONS OF A FEW TERMS </h3>
+ <p>
+ Hacking, more so than almost any other environment, is dominated by a 
+myriad of acronyms and odd terms. Here I will expand on some of the more
+ popular of these and where they originated from.
+ 
+ </p><ul>
+ <li> Script Kiddie </li>
+ <p> Someone who uses pre-written exploits to engage in hacking without 
+understanding how or why they work. The term originated in the early 90s
+ on cybersecurity mailing lists. Hackers will often use this word 
+frequently, referring to anyone calling themselves a hacker as a script 
+kiddie because it is a simple insult that really gets under their skin. 
+ </p>
+ <li> Leet, 1337, or Leetspeak </li>
+ <p> This refers to internet slang susbtituting numbers and symbols for 
+letters, originating in the 1980s. A hacker's proficiency in leetspeak 
+was often seen to be indicative of their skill and presence in hacker 
+spaces </p>
+ <li> Root / Rooting a system </li>
+ <p>Root access is another term for the highest level of access to a 
+system, typically a UNIX based system. This term originated in the 1970s
+ but became mainstream in the 90s. </p>
+<li> 0wn / pwn </li>
+<p> Similar to rooting, to 0wn or pwn means to dominate, compromise, or 
+take control of a system. This originated in the mid to late 90s, as 
+hackers and gamers alike would misspell own as 0wn or pwn as the keys 
+are adjacent. </p>
+<li> Zero-day / 0-day </li>
+<p> A zero day is simply a vulnerability that is newly discovered and 
+unpatched (hence, zero days to fix it). Originating in the mid 90s, 
+0-day was original used to refer to newly cracked software shared on BBS
+ boards. 
+</p><li> Backdoor </li>
+<p> While often picked up by Hollywood as a "golden ticket"-esque entry 
+point for a hacker, backdoors are a genuine method of accessing systems 
+without authentication. Originating in the 70s but becoming popular in 
+the 80s, these are essentially entry points often left intentionally by 
+developers (or placed there by attackers with access) that are hidden 
+and accessed at a later point. </p>
+<li> Social Engineering </li>
+<p> The act of hacking people, rather than technology. The term was 
+popularized in the 1980s with Kevin Mitnick, and is still a pillar of 
+hacking today arguably more important than technical prowess. Phishing 
+emails are a basic example of social engineering, with a more advanced 
+example being high level fraud such as sim-swapping to gain access to 
+someones phone and make calls on their behalf. Tricking even a waiter to
+ give you your food for free is social engineering. </p>
+<li> DoS / DDoS (Denial of Service </li>
+<p> An attack often perpetrated by a large network of computers 
+controlled by malware, aiming to overload a system or network with 
+constant requests until it crashes. This term was first seen in the 80s,
+ but was popularized in the 90s when attacks like this became more 
+prevalent. </p>
+  <li> Botnet </li> 
+  <p> A network of computers infected by malware, able to be controlled 
+remotely to carry out tasks. Originating from the mid-late 90s, botnets 
+have been known to be used to carry out DDoS attacks as well as mine 
+cryptocurrency more recently. </p>
+  <li> IRC (Internet Relay Chat) </li>
+  <p> First deployed in Finland in 1988 and popularized in the 90s, 
+these chatrooms were real-time text chats used by hackers, IRCs can 
+still be found today and are also fairly easy to host on your own. </p>
+  <li> DEFCON </li>
+  <p> One of the largest hacker conventions, started in 1993 by Jeff 
+Moss, AKA "Dark Tangent", and hosted in Las Vegas. While a completely 
+legal conference, DEFCON attendees recommend not bringing your 
+smartphone, laptop, or credit card. </p>
+ </ul>
+ <p></p>
+ </article>
+ 
+
+   
+         <article class="post">
+        <h3> Sources </h3>
+        <p>
+        https://www.cobalt.io/blog/history-of-hacking <br>
+        https://www.britannica.com/topic/phreaking <br>
+        http://textfiles.com/hacking/aspen.txt <br>
+        https://insecure.org/sploits/phf-cgi.html <br>
+        <i>Hacker Culture</i> by Douglas Thomas <br>
+        https://www.w3schools.com/sql/sql_injection.asp <br>
+        https://tlp.law.pitt.edu/ojs/tlp/article/view/104 <br>
+        
+        </p>
+    </article>
+
+</div>
+
+    </main>
+
+    <footer>
+        <p>Best viewed in Netscape Navigator 3.0 at 800x600 resolution.</p>
+        <p><span class="blink">Under Construction</span> 🚧</p>
+    </footer>
+</div>
+
+
+</body></html>
