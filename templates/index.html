@@ -62,7 +62,7 @@ Originally, websites were designed with completely static HTML, which meant ther
 At the time, most "System Administrators" were just young college graduates who had a knack for computers, not security experts (which didn't exist as a job yet). This meant that most admins just used sample configurations for their sites, and implemented CGI with a myriad of vulnerabilities. One of the first famous hacks exploiting CGI was the PHF exploit. By the mid 90's, thousands of servers came preinstalled with PHF, a CGI phone book lookup script. PHF took user input and passed it directly into shell command on the server. As explained in a writeup archived on insecure.org, access, sometimes even root access, to any server running PHF could be attained by opening a telnet port (a connection protocol) on your machine and simply pasting (with minor adjustments according to your scenario) this into the site:<br>
 <br>
 GET <br>
-/cgi-bin/phf?Jserver=foobar.com%0Acat%20/etc/passwd%0A&Qalias=&Qname=foo&Qemail=&Qnickname=&Qoffice_phone=&Qcallsign=&Qproxy=&Qhigh_school=&Qslip= HTTP/1.0<br>
+/cgi-bin/phf?Jserver=foobar.com%0Acat%20/etc/passwd%0A&Qalias=&Qname=foo&Qemail=&Qnickname=&Qoffice_phone=&Qcallsign=&Qproxy=&Qhigh_school<br>=&Qslip= HTTP/1.0<br>
 Accept: */*<br>
 Accept: application/x-wais-source<br>
 Accept: text/plain<br>
@@ -113,7 +113,7 @@ This script essentially says: Get some information from the database (SELECT), g
     	This code turns anything following it into a comment with "--", meaning anything follow "DROP TABLE users" will not be executed. It then deletes the entire table of users with "DROP TABLE users" and ignores everything after.
         </p>
         <p>
-        Similarly, an attacker could write SQL injections that display the entire table of usernames and passwords. Since most early websites didn't hash passwords, or hashed them using poor algorithms, this could expose sensitive information. Furthermore, if a site stored information such as name, phone number, address, username, password, and possibly even financial information, this could all be accessed with a simple SQL injection attack. 
+        Similarly, an attacker could write SQL injections that display the entire table of usernames and passwords. An example of this is available in the <a href="http://127.0.0.1:5000/users-dump">(Demo) Users Dump</a> section, and will update the database in real time if you create a username and password. Since most early websites didn't hash passwords, or hashed them using poor algorithms, this could expose sensitive information. Furthermore, if a site stored information such as name, phone number, address, username, password, and possibly even financial information, this could all be accessed with a simple SQL injection attack. 
         </p>
         <p>
         Hence, the fundamental flaw of early SQL was, again, that it trusts the user to only have normal input, and trusts whatever they type to be fed directly to the database. Modern SQL treats user input as data, rather than a part of the command. This is done using parameterized queries, where instead of concatenating strings together, the program will send the user code separately from the SQL command. This is done so that the user input cannot escape into the actual database, with inescapable placeholders representing user input. Below is an example of the modern, safe version of the same SQL query: <br>
@@ -209,15 +209,17 @@ While young, curious, and clever 80s-90s hackers grew into security consultants,
    
          <article class="post">
         <h3> Sources </h3>
-        <p>
-        https://www.cobalt.io/blog/history-of-hacking <br>
-        https://www.britannica.com/topic/phreaking <br>
-        http://textfiles.com/hacking/aspen.txt <br>
-        https://insecure.org/sploits/phf-cgi.html <br>
-        <i>Hacker Culture</i> by Douglas Thomas <br>
-        https://www.w3schools.com/sql/sql_injection.asp <br>
-        https://tlp.law.pitt.edu/ojs/tlp/article/view/104 <br>
         
+        <p>
+        <ul>
+     <li> <a href="https://www.cobalt.io/blog/history-of-hacking">https://www.cobalt.io/blog/history-of-hacking</a><br> </li>
+      <li> <a href="https://www.britannica.com/topic/phreaking">https://www.britannica.com/topic/phreaking</a><br> </li>
+      <li> <a href="http://textfiles.com/hacking/aspen.txt">http://textfiles.com/hacking/aspen.txt</a><br> </li>
+       <li> <a href="https://insecure.org/sploits/phf-cgi.html">https://insecure.org/sploits/phf-cgi.html</a><br> </li>
+
+        <li> <a href="https://www.w3schools.com/sql/sql_injection.asp">https://www.w3schools.com/sql/sql_injection.asp"</a> <br> </li>
+      <li>  <a href="https://tlp.law.pitt.edu/ojs/tlp/article/view/104">https://tlp.law.pitt.edu/ojs/tlp/article/view/104</a> <br> </li>
+              <li>  <i>Hacker Culture</i> by Douglas Thomas <br> </li>
         </p>
     </article>
 

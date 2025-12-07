@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+  <forum title="Message Board">
+
+    <article id="1">
+      <title>The Evolution of Hacker Culture</title>
+      <para>
+        Hacking culture is a phenomenon that has been around much longer than the internet. Revolving around curiosity, problem solving, and counterculture, hacking has a deep, rich history and evolution. The article "A Brief History of Hacking" by Jacob Fox sums up the dawn of both this term and culture nicely. While some may point to 1878 as first case of "hacking", when young phone operators pranked callers by switching telephone lines, the term originates from around the 1950's–60's when students at MIT started altering train sets, and were deemed "hackers". But what most people consider true hacking started with John Draper in 1965, a man more famously known as Cap'n Crunch. Draper realized that by using a toy whistle from a cereal box, due to the frequency it produced, he could trick the telephone system and make free long-distance calls. Bypassing technology with cleverness, this is the foundation of hacking.
+      </para>
+      <para>
+        "Phreaking" as a term comes from the words phone, free, and freak, according to the history of the word from Britannica. The first ever "phreak" was a blind man named Joe Engressia who could whistle a perfect 2600 MHz pitch, recreating the exact frequency of a telephone routing signal. Engressia's friend, John Draper, found that a whistle from a Captain Crunch box produced this very same frequency. This technique spread fast, and eventually "phone phreaks" switched from toy whistles to blue boxes, homemade transmitters generating the same 12 tones used by phone operators. But phreaking was about more than just making free calls, it was about curiosity and the ability to circumvent complex systems. Phreaks weren't just phreaking because they couldn't afford calls, it was a statement about being clever enough to ask "how does this work, and how can I get around it?". While the eventual upgrade of telephone lines in 1983 would effectively end phreaking, the attention it garnered and subsequent movement it started would never be stopped. Once computers and modems became more accessible, this same mindset moved from phone lines to online systems.
+      </para>
+      <para>
+        By the 80s and early 90s, underground forums that predated the web began to arise. These bulletin board systems (BBS) were networks of local computers that could connect via modem and share messages, download files, or even play games. Preserved today on textfiles.com, Douglas Thomas argues in his book "Hacker Culture" that these boards, available only via dial-up, were the birth of digital identity. Each BBS had its own culture, rules, and hierarchies, with contributors known just by their username and reputation. These boards are perfect snapshots of how hackers learned, traded techniques, and built reputation.
+      </para>
+      <para>
+        Another hack regarding phone systems, an entry listed as "Aspen.txt" and titled "A Complete Guide To Hacking and Use of ASpEN Voice Mail Systems" was written by "Caveman" and published on January 13th, 1992 by "R.A.W Productions". Caveman explains that ASpEN or Automated Speech Exchange Networks are voicemail systems used by small businesses for individual employees away from their desk. It goes on to explain, with much profanity, how to find, hack, and avoid getting removed from an AsPEN box. Finally, writing how to contact him, shouting out some of his acquaintances, and listing the boards he is a part of, Caveman ends the entry with:
+      </para>
+
+      <quote group="ASPEN">
+        <line>[Disclamer]</line>
+        <line>I could say that I don't want anyone to do anything contained in this file,</line>
+        <line>and that it is strictly for informational purposes, but I know that people</line>
+        <line>are going to go out and do this shit. So, Mr. Law Enforcement Agent, cram it,</line>
+        <line>you can't find me, for all you know, I could be your father (and knowing your</line>
+        <line>mother, I probably am.) AMF.</line>
+      </quote>
+
+      <quote group="ASPEN">
+        <line>[Bullshit]</line>
+        <line>If you have suggestions, comments, or have nothing better to do, you can</line>
+        <line>reach me (Caveman) at [Legion 1]: 202.337.2844 [12/24/96/14.4]</line>
+      </quote>
+
+      <quote group="ASPEN">
+        <line>[PEACE]</line>
+        <line>Peace to Mr. Black, my partner in crime.</line>
+        <line>Peace to Tomellicas, Legion creator.</line>
+        <line>Peace to G-Spot, for finding the systems to hack on.</line>
+        <line>Peace to Night Ranger, for his article.</line>
+      </quote>
+
+      <quote group="ASPEN">
+        <line>[The Boards]</line>
+        <line>Legion 1 [202]</line>
+        <line>Powerdome, INC. [703]</line>
+        <line>Midian Private [703]</line>
+        <line>School For Scandal [301]</line>
+      </quote>
+
+      <para>
+        This type of post perfectly sums up hacker culture in the 90s. Building a name for himself, working with other hackers, sharing his methods, and sticking it to both law enforcement and businessmen, Caveman's entry is the quintessential "hacker" post. But hacking, especially by the 80s and 90s, was about much more than just tricking phone systems. When the Web arrived, it did so with little to no security measures, trusting users blindly. Well seasoned hackers, like Caveman, were likely quite excited that this was the case. To hackers, the Web was a new playground, one with thousands of vulnerable sites hosted from university servers, basement Linux machines, and business offices, and all accessible from the comfort of your own home.
+      </para>
+    </article>
+
+    <article id="2">
+      <title>WHAT MADE THE EARLY WEB INSECURE?</title>
+      <para>
+        Originally, websites were designed with completely static HTML, which meant there was no interactivity. Because of this, Common Gateway Interface (CGI) scripts were written in Perl, C, or Shell scripts to enable interaction with the server. However, CGI was a disaster for security; unsanitized input strings were sent directly to scripts and developers went with the blanket assumption that users would only give normal input. This meant that anyone with some programming knowledge could end up with full access to a server via a "poisoned" input.
+      </para>
+      <para>
+        At the time, most "System Administrators" were just young college graduates who had a knack for computers, not security experts (which didn't exist as a job yet). This meant that most admins just used sample configurations for their sites and implemented CGI with a myriad of vulnerabilities. One of the first famous hacks exploiting CGI was the PHF exploit. By the mid 90's, thousands of servers came preinstalled with PHF, a CGI phone book lookup script. PHF took user input and passed it directly into a shell command on the server. As explained in a writeup archived on insecure.org, access, sometimes even root access, to any server running PHF could be attained by opening a telnet port (a connection protocol) on your machine and simply pasting (with minor adjustments according to your scenario) this into the site:
+      </para>
+
+      <code language="http"><![CDATA[
+GET 
+/cgi-bin/phf?Jserver=foobar.com%0Acat%20/etc/passwd%0A&Qalias=&Qname=foo&Qemail=&Qnickname=&Qoffice_phone=&Qcallsign=&Qproxy=&Qhigh_school=&Qslip= HTTP/1.0
+Accept: */*
+Accept: application/x-wais-source
+Accept: text/plain
+Accept: text/html
+Accept: www/mime
+User-Agent:  Lynx/2.3 BETA  libwww/2.14
+Referer:  http://localhost/cgi-bin/phf
+      ]]></code>
+
+      <para>
+        These types of exploits led to thousands of compromised servers, and were the first examples of widespread remote injection of arbitrary code over HTTP. While CGI didn't appear until the 90's, earlier hacks exploiting machines like this led to the passing of one of the most important laws in hacking history, the Computer Fraud and Abuse Act (CFAA) of 1986. This law criminalized unauthorized access to computer systems, something that wasn't really explicitly defined, and broadly made it easy to prosecute hackers regardless of how much harm was actually done. Regardless of this, hackers understood at the time that the exploits possible showed the naivety of developers. The Web trusted users by default, a sentiment that would be true much longer than CGI was used, and would continue to lead to more exploitation. Once this was clear, hackers realized that most systems could be breached one way or another, it was just a puzzle waiting to be solved. And conveniently, hackers love puzzles.
+      </para>
+    </article>
+
+    <article id="3">
+      <title>THE DEVELOPMENT OF MODERN DATABASES AND THEIR EXPLOITATION</title>
+      <para>
+        By the mid to late 90's, many dynamic sites began using early SQL servers. SQL, or Structured Query Language, is a tool used to define, manage, and query data stored in a database. Moreover, SQL allows users to interact with structured data, such as by creating a username and password that is then stored on the server. SQL is still widely used today, and is the standard language for relational databases. However, modern SQL is taught with much better security practices, unlike the sites of the 90s. When SQL first began being implemented, developers assumed users didn't have access to the database via the website, so it was safe to assume that only a user would know, and attempt to input, their own password...right?
+      </para>
+      <para>
+        Well, in reality early SQL was written very poorly. This isn't necessarily the fault of the programmers, as this was simply the accepted way to write code at the time, but it created many exploitable issues. For instance, early SQL developers concatenated strings with user input by writing a script like:
+      </para>
+
+      <code language="sql">
+        SELECT * FROM users WHERE username = '$user' AND password = '$pass'
+      </code>
+
+      <para>
+        This script essentially says: Get some information from the database (SELECT), get everything from the matching row (*), look inside the table called users (FROM users), but only give me the rows that meet the following conditions (WHERE). Next it says, find the rows where the username column matches the user input (username = '$user', if the user typed admin then username = 'admin'), then both conditions must be true (AND), find rows where the password column matches the user input (password = '$pass'). This essentially means if a row matches with the username and password, access for that user is granted.
+      </para>
+      <para>
+        This code works, and seems to be pretty intuitive, logging in a user when and only when they input the correct password. However, the big problem here is that the database cannot tell where the input from the user ends and SQL code begins. This introduces the concept of SQL injection. In SQL, '1' = '1' is an example of an always true statement. If a hacker were to input the admin username but the password as:
+      </para>
+
+      <code language="sql">
+        ' ' OR '1' = '1'
+      </code>
+
+      <para>
+        The SQL query would now become:
+      </para>
+
+      <code language="sql">
+        SELECT * FROM users WHERE username = 'admin' AND password = ' ' OR '1' = '1'
+      </code>
+
+      <para>
+        This would evaluate to:
+        1: password = ' ' (false)
+        2: '1' = '1' (true)
+        — making the entire statement true and logging the hacker in as the admin.
+      </para>
+      <para>
+        In layman's terms, the hacker is telling the database "log me in as admin if the password is blank or if 1 = 1." and since 1 always equals 1, access is granted. Another attack that is also possible in poorly written systems is one that destroys the database instead of just accessing it. For hackers that want to wreak havoc instead of infiltrate an account, one could enter either into the username or password field:
+      </para>
+
+      <code language="sql">
+        '; DROP TABLE users;--
+      </code>
+
+      <para>
+        This code turns anything following it into a comment with "--", meaning anything following "DROP TABLE users" will not be executed. It then deletes the entire table of users with "DROP TABLE users" and ignores everything after.
+      </para>
+      <para>
+        Similarly, an attacker could write SQL injections that display the entire table of usernames and passwords. Since most early websites didn't hash passwords, or hashed them using poor algorithms, this could expose sensitive information. Furthermore, if a site stored information such as name, phone number, address, username, password, and possibly even financial information, this could all be accessed with a simple SQL injection attack.
+      </para>
+      <para>
+        Hence, the fundamental flaw of early SQL was, again, that it trusts the user to only have normal input, and trusts whatever they type to be fed directly to the database. Modern SQL treats user input as data, rather than a part of the command. This is done using parameterized queries, where instead of concatenating strings together, the program will send the user data separately from the SQL command. This is done so that the user input cannot escape into the actual database, with inescapable placeholders representing user input. Below is an example of the modern, safe version of the same SQL query:
+      </para>
+
+      <code language="sql">
+        SELECT * FROM users WHERE username = ? AND password = ?
+      </code>
+
+      <code language="python">
+        cursor.execute(query, (username, password))
+      </code>
+
+      <para>
+        This flavor of hack completely changed the game. With one simple input, attackers could gain complete access to servers and do with it what they please. This, along with other hacks of the time, changed the culture around hacking and specifically the reputation of hackers. Instead of posting techniques to build a reputation, a hacker could just plaster their handle all over a popular website, telling everyone they took total control.
+      </para>
+    </article>
+
+    <!-- Article 4: THE CRACKDOWN ON HACKERS, AND SPLIT OF THE INDUSTRY -->
+    <!-- Article 5: MODERN BLACKHATS AND ORGANIZED CYBERCRIME -->
+    <!-- Article 6: MY PERSONAL HACKING STORIES & FINAL REMARKS -->
+    <!-- Article 7: DESCRIPTIONS OF A FEW TERMS -->
+    <!-- Article 8: Sources -->
+
+    <article id="7">
+      <title>DESCRIPTIONS OF A FEW TERMS</title>
+      <para>
+        Hacking, more so than almost any other environment, is dominated by a myriad of acronyms and odd terms. Here are some of the more popular of these and where they originated from.
+      </para>
+      <terms>
+        <term id="script-kiddie">
+          <name>Script Kiddie</name>
+          <description>
+            Someone who uses pre-written exploits to engage in hacking without understanding how or why they work. The term originated in the early 90s on cybersecurity mailing lists. Hackers will often use this word frequently, referring to anyone calling themselves a hacker as a script kiddie because it is a simple insult that really gets under their skin.
+          </description>
+        </term>
+        <term id="leet">
+          <name>Leet / 1337 / Leetspeak</name>
+          <description>
+            Internet slang substituting numbers and symbols for letters, originating in the 1980s. A hacker's proficiency in leetspeak was often seen to be indicative of their skill and presence in hacker spaces.
+          </description>
+        </term>
+        <term id="root">
+          <name>Root / Rooting a System</name>
+          <description>
+            Root access is another term for the highest level of access to a system, typically a UNIX-based system. This term originated in the 1970s but became mainstream in the 90s.
+          </description>
+        </term>
+        <term id="own">
+          <name>0wn / pwn</name>
+          <description>
+            Similar to rooting, to 0wn or pwn means to dominate, compromise, or take control of a system. This originated in the mid to late 90s, as hackers and gamers alike would misspell own as 0wn or pwn as the keys are adjacent.
+          </description>
+        </term>
+        <term id="zeroday">
+          <name>Zero-day / 0-day</name>
+          <description>
+            A zero day is simply a vulnerability that is newly discovered and unpatched (hence, zero days to fix it). Originating in the mid 90s, 0-day was originally used to refer to newly cracked software shared on BBS boards.
+          </description>
+        </term>
+        <term id="backdoor">
+          <name>Backdoor</name>
+          <description>
+            A method of accessing systems without authentication. Originating in the 70s but becoming popular in the 80s, these are essentially entry points often left intentionally by developers (or placed there by attackers with access) that are hidden and accessed at a later point.
+          </description>
+        </term>
+        <term id="social-engineering">
+          <name>Social Engineering</name>
+          <description>
+            The act of hacking people rather than technology. The term was popularized in the 1980s with Kevin Mitnick, and is still a pillar of hacking today. Phishing emails are a basic example; more advanced examples include SIM-swapping to gain access to someone's phone and make calls or receive codes on their behalf.
+          </description>
+        </term>
+        <term id="dos">
+          <name>DoS / DDoS (Denial of Service)</name>
+          <description>
+            An attack often perpetrated by a large network of computers controlled by malware, aiming to overload a system or network with constant requests until it crashes. This term was first seen in the 80s, but was popularized in the 90s when attacks like this became more prevalent.
+          </description>
+        </term>
+        <term id="botnet">
+          <name>Botnet</name>
+          <description>
+            A network of computers infected by malware, able to be controlled remotely to carry out tasks. Originating from the mid-late 90s, botnets have been known to be used to carry out DDoS attacks as well as mine cryptocurrency more recently.
+          </description>
+        </term>
+        <term id="irc">
+          <name>IRC (Internet Relay Chat)</name>
+          <description>
+            First deployed in Finland in 1988 and popularized in the 90s, these chatrooms were real-time text chats used by hackers. IRCs can still be found today and are also fairly easy to host on your own.
+          </description>
+        </term>
+        <term id="defcon">
+          <name>DEFCON</name>
+          <description>
+            One of the largest hacker conventions, started in 1993 by Jeff Moss, AKA "Dark Tangent", and hosted in Las Vegas. While a completely legal conference, DEFCON attendees recommend not bringing your smartphone, laptop, or credit card.
+          </description>
+        </term>
+      </terms>
+    </article>
+
+    <article id="8">
+      <title>Sources</title>
+      <sources>
+        <source type="web">https://www.cobalt.io/blog/history-of-hacking</source>
+        <source type="web">https://www.britannica.com/topic/phreaking</source>
+        <source type="textfile">http://textfiles.com/hacking/aspen.txt</source>
+        <source type="web">https://insecure.org/sploits/phf-cgi.html</source>
+        <source type="book">Hacker Culture by Douglas Thomas</source>
+        <source type="web">https://www.w3schools.com/sql/sql_injection.asp</source>
+        <source type="journal">https://tlp.law.pitt.edu/ojs/tlp/article/view/104</source>
+      </sources>
+    </article>
+
+  </forum>
+</site>
